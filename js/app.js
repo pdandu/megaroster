@@ -53,8 +53,24 @@ const megaroster = {
 
   removeStudent(ev) {
       const btn = ev.target
-      btn.closest('.student').remove()
+      const name = btn.closest('.student')
+      name.remove()
+      const id = name.getAttribute('data-id')
+      const index = this.findName(id)
+      this.students.splice(index, 1)
+      // this.students.splice(?,1)
   },
+
+  findName(index) {
+    for (let i=0; i < this.students.length; i ++){
+        if (this.students[i].id == index)
+        {
+                return i
+        }
+    }
+
+  },
+  
   removeClassName(el, className){
     el.className = el.className.replace(className, '').trim()
 }}
