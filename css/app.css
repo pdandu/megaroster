@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+h2 {
+  font-family: 'Dosis', sans-serif;
+  text-shadow: 3px 2px coral;
+  text-align: center;
+  font-size: 75pt;
+}
+
+div.student-name {
+  font-family: 'Dosis', sans-serif;
+  font-size:15pt;
+
+}
+
 .template {
   visibility: hidden;
 }
@@ -6,6 +21,8 @@
   border: 1px solid #ddd;
   padding: 0.75rem 1.25rem;
   height: 4rem;
+  transition: 0.25;
+  
 }
 
 .student + .student {
@@ -18,7 +35,7 @@
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 230px)
+  width: calc(100% - 195px)
 }
 
 .actions {
@@ -26,29 +43,33 @@
   margin-bottom: 0;
 }
 
+.actions .button {
+  padding: 0.5em 0.69em 0.5em 0.64em;
+  font-size: 1.2rem;
+}
+.actions .button {
+  transform: 1.1pt;
+
+}
+
 .promoted {
   background-color: #ffa807;
-  border-color: #ffc656;
+  border-color:black;
 }
 
-.student:first-child button.move-up {
+.student:first-child button.move-up,
+.student:last-child button.move-down {
   background-color: #ddd;
   color: #eee;
   cursor: not-allowed;
 }
 
-.student:nth-last-child(2) button.move-down {
-  background-color: #ddd;
-  color: #eee;
-  cursor: not-allowed;
-}
-* { 
-  background-color: powderblue;
-  color: coral;
+[contenteditable]:hover {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 2px;
 }
 
-.title {
-  text-align: center;
-  text-decoration: underline;
-  text-shadow: 3px 2px coral; 
+[contenteditable]:focus {
+  outline-width: 5px;
 }
